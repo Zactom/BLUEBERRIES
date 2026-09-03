@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-void: #030014;
+  --color-void-2: #07031e;
+  --color-indigo: #6366f1;
+  --color-violet: #a855f7;
+  --color-magenta: #d946ef;
+  --color-cyan: #06b6d4;
+}
+
+* {
+  cursor: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #030014;
+  overflow: hidden;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Custom slider styling */
+.multiverse-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 182, 212, 0.3),
+    rgba(168, 85, 247, 0.3),
+    rgba(217, 70, 239, 0.3)
+  );
+  outline: none;
+}
+
+.multiverse-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #06b6d4, #a855f7);
+  cursor: none;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.2s;
+}
+
+.multiverse-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+}
+
+.multiverse-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #06b6d4, #a855f7);
+  cursor: none;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Scrollbar hidden */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Selection */
+::selection {
+  background: rgba(168, 85, 247, 0.3);
+  color: #fff;
+}
+
+/* Font utility classes */
+.font-mono {
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* Glow text animation */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 40px rgba(168, 85, 247, 0.5));
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
